@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208163249) do
+ActiveRecord::Schema.define(version: 20141208164305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20141208163249) do
   create_table "checkouts", force: true do |t|
     t.integer  "book_id",                                       null: false
     t.datetime "date_due",      default: '2014-12-22 15:37:09', null: false
-    t.string   "reader_name",                                   null: false
     t.datetime "date_returned"
     t.datetime "created_at"
     t.datetime "updated_at"
