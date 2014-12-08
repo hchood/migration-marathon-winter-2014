@@ -1,2 +1,2 @@
-class Category < ActiveRecord::Migration
+class Category < ActiveRecord::Base
 end
