@@ -1,3 +1,3 @@
-class Checkout < ActiveRecord::Migration
+class Checkout < ActiveRecord::Base
   belongs_to :book
 end
