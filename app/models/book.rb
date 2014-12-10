@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
-  belongs_to :category
+  has_many :categorizations
+  has_many :categories, through: :categorizations
   has_many :checkouts
 end
