@@ -30,7 +30,22 @@ reader_names = [
   reader_name = reader_names[rand(reader_names.length - 1)]
   Checkout.create(book: book, reader_name: reader_name)
 end
-
+# STEP 8
 # 1. Create my categorization model & table
 # 2. Create categorizations for all the existing Book objects
 # 3. Drop category_id from books table
+# 4. Update the associations
+
+# STEP 9 & 10 & 11
+# 1. Create a readers table & model
+# 2. Populate it - iterate over all Checkout objects
+# & find or create a Reader object using that checkout's reader_name
+# 3. Add reader_id column to our Checkout table
+# 4. Populate the reader_id column
+# 5. Delete the reader_name
+# 6. Update the associations
+
+# STEP 12
+# 1. Add the first_name and last_name columns
+# 2. Populate first_name and last_name columns
+# 3. Drop the full_name column
