@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208155419) do
+ActiveRecord::Schema.define(version: 20141210201129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,9 +39,18 @@ ActiveRecord::Schema.define(version: 20141208155419) do
 
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
 
+  create_table "categorizations", force: true do |t|
+    t.integer  "category_id", null: false
+    t.integer  "book_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categorizations", ["category_id", "book_id"], name: "index_categorizations_on_category_id_and_book_id", unique: true, using: :btree
+
   create_table "checkouts", force: true do |t|
     t.integer  "book_id",                                       null: false
-    t.datetime "date_due",      default: '2014-12-22 15:37:09', null: false
+    t.datetime "date_due",      default: '2014-12-24 19:50:01', null: false
     t.string   "reader_name",                                   null: false
     t.datetime "date_returned"
     t.datetime "created_at"
